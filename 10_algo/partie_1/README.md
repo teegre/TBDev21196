@@ -13,7 +13,7 @@ A ← 3
 Fin
 ```
 
-Réponse : A = 3, B = 4.
+Réponse : `A = 3, B = 4.`
 
 ## Exercice 1.2
 
@@ -30,7 +30,7 @@ C ← B - A
 Fin
 ```
 
-Réponse : A = 2, B = 3, C = 1.
+Réponse : `A = 2, B = 3, C = 1.`
 
 ## Exercice 1.3
 
@@ -46,7 +46,7 @@ B ← A - 4
 Fin
 ```
 
-Réponse : A = 6, B = 2.
+Réponse : `A = 6, B = 2.`
 
 
 ## Exercice 1.4
@@ -64,7 +64,7 @@ A ← C
 Fin
 ```
 
-Réponse : A = 13, B = 13, C = 13.
+Réponse : `A = 13, B = 13, C = 13.`
 
 ## Exercice 1.5
 
@@ -80,7 +80,7 @@ B ← A
 Fin
 ```
 
-Réponse : A = 2, B = 2.
+Réponse : `A = 2, B = 2.`
 
 ## Exercice 1.6
 
@@ -116,9 +116,11 @@ Fin
 
 ## Exercice 1.8
 
-*Que produit l’algorithme suivant ?  Variables A, B, C en Caractères*
+*Que produit l’algorithme suivant ?*
+
 
 ```
+Variables A, B, C en Caractères
 Début
 A ← "423"
 B ← "12"
@@ -126,13 +128,15 @@ C ← A + B
 Fin
 ```
 
-Réponse : cela produit une erreur car l'on ne peut pas ajouter des chaînes de caractères ensemble.  
+Réponse : `cela produit une erreur car l'on ne peut pas ajouter des chaînes de caractères ensemble.`
 
 ## Exercice 1.9
 
-*Que produit l’algorithme suivant ?  Variables A, B, C en Caractères*
+*Que produit l’algorithme suivant ?*
+
 
 ```
+Variables A, B, C en Caractères
 Début
 A ← "423"
 B ← "12"

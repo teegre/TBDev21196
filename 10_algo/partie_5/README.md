@@ -40,6 +40,15 @@ Réponse :
 ```
 Variable n en Numérique
 Début
-T
+Ecrire "Entrer un nombre compris entre 1 et 10 :"
+Lire n
+TantQue (n < 10) Ou (n > 20)
+  Si n < 10 Alors
+    Ecrire "Plus grand !"
+  Finsi
+  Si n > 20 Alors
+    Ecrire "Plus petit !"
+  Finsi
+FinTantQue
 Fin
 ```

@@ -2,8 +2,9 @@
 
 ## Exercice 2.1
 
+*Quel résultat produit le programme suivant ?*
+
 ```
-Quel résultat produit le programme suivant ?
 Variables val, double en Numérique
 Début
 Val ← 231
