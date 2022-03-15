@@ -46,6 +46,12 @@ nav {
   width: 80%;
 }
 
+table {
+  width: 80%;
+  text-align: left;
+  font-size: 1rem;
+}
+
 form {
   width: 80%;
 }
