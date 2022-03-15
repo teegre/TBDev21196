@@ -45,6 +45,9 @@ Ecrire "Entrer les minutes :"
 Lire m
 Si m + 1 = 60 Alors
   h ← h + 1
+  Si h = 24 Alors
+    h ← 0
+  Finsi
   m ← 0
 Sinon
   m ← m + 1
@@ -77,6 +80,9 @@ Si s + 1 = 60 Alors
 Finsi
 Si m = 60 Alors
   h ← h + 1
+  Si h = 24 Alors
+    h = 0
+  Finsi
   m ← 0
 Finsi
 Ecrire "Dans une seconde, il sera " & h & " heure(s), " & m & " minutes et " & s & " seconde(s)"
