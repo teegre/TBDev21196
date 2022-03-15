@@ -2,10 +2,6 @@ html * {
   font-family: "Times New Roman", Times, serif;
 }
 
-html, body {
-  height: 100%;
-}
-
 h1 {
   font-size: 24px;
 }
@@ -35,7 +31,6 @@ nav {
 }
 
 .menu {
-  display: inline-block;
   margin: 4px;
   padding: 10px 20px 10px 20px;
 }
