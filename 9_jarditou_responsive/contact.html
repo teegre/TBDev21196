@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Jarditou - Contact</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+
+  <body>
+
+    <header>
+      <img src="assets/src/img/jarditou_logo.jpg" alt="Jarditou" title="Logo Jarditou" id="logo">
+      <div id="hdr">Tout le jardin</div>
+
+      <nav>
+        <div class="menu">
+          <a href="index.html">Accueil</a>
+          <a href="tableau.html" title="Tableau">Tableau</a>
+          <a href="contact.html" title="Formulaire">Formulaire</a>
+        </div>
+      </nav>
+      <img id="banner" src="assets/src/img/promotion.jpg">
+    </header>
+
+    <em>* Ces zones sont obligatoires</em>
+
+    <form action="http://bienvu.net/script.php" method="POST">
+      <fieldset>
+        <legend>Vos coordonnées</legend>
+        <label for="firstname">Nom* : </label>
+        <input type=text name="firstname" required><br>
+        <label for="name">Prénom* : </label>
+        <input type=text name="name" required><br>
+        <br>
+        <label for="genre">Sexe* :</label>
+        <input type="radio" name="genre" value="female" required>Féminin
+        <input type="radio" name="genre" value="male">Masculin
+        <br>
+        <br>
+        <label for="birthdate">Date de naissance* : </label>
+        <input type="date" name="birthdate" required><br>
+        <label for="zipcode">Code postal* : </label>
+        <input type="text" name="zipcode" pattern="[0-9]{5}" required><br>
+        <label for="address">Adresse : </label>
+        <input type=text name="address"><br>
+        <label for="city">Ville : </label>
+        <input type=text name="city" target="[A-Za-z]"><br>
+        <label for="email">E-mail* : </label>
+        <input type="email" name="email" placeholder="nom@exemple.com" required><br>
+      </fieldset>
+
+      <fieldset>
+        <legend>Votre demande</legend>
+        <label for="subject">Sujet* : </label>
+        <select id="subject" required>
+          <option value="" selected>Sélectionnez un sujet</option>
+          <option value="orders">Mes commandes</option>
+          <option value="product">Question sur un produit</option>
+          <option value="inquiry">Réclamation</option>
+          <option value="other">Autres</option>
+        </select>
+        <br>
+        <label for="question">Votre question : </label>
+        <textarea name="question" required></textarea>
+      </fieldset>
+
+      <div>
+        <input type="checkbox" name="process" required>
+        <label for="process">* J'accepte le traitement informatique de ce formulaire</label>
+      </div>
+
+      <div>
+        <input type="submit">
+        <input type="button" name="cancel" value="Annuler">
+      </div>
+
+    </form>
+
+    <footer>
+      <nav>
+        <div class="menu">
+          <a href="">Mentions légales</a>
+          <a href="">Horaires</a>
+          <a href="">Plan du site</a>
+        </div>
+      </nav>
+    </footer>
+  </body>
+</html>
