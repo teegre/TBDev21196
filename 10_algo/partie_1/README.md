@@ -30,7 +30,7 @@ C ← B - A
 Fin
 ```
 
-Réponse : A = 2, B = 8, C = 1.
+Réponse : A = 2, B = 3, C = 1.
 
 ## Exercice 1.3
 
@@ -46,7 +46,7 @@ B ← A - 4
 Fin
 ```
 
-Réponse : A = 10, B = 6.
+Réponse : A = 6, B = 2.
 
 
 ## Exercice 1.4
