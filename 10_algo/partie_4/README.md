@@ -16,7 +16,7 @@ Réponse :
 
 ```
 Debut
-Si NON (Tutu > Toto + 4) OU NON Tata = "OK" Alors
+Si Tutu < Toto + 4 OU Tata <> "OK" Alors
   Tutu ← Tutu - 1
 Sinon
   Tutu ← Tutu + 1
