@@ -12,7 +12,7 @@ Début
 Ecrire "Entrer un nombre compris entre 1 et 3 :"
 Lire n
 TantQue n < 1 Ou n > 3
-  Ecrire "Erreur! Entrer un nombre compris entre 1 et 3 :"
+  Ecrire "Erreur ! Entrer un nombre compris entre 1 et 3 :"
   Lire n
 FinTantQue
 Fin
@@ -45,8 +45,7 @@ Lire n
 TantQue (n < 10) Ou (n > 20)
   Si n < 10 Alors
     Ecrire "Plus grand !"
-  Finsi
-  Si n > 20 Alors
+  SinonSi n > 20 Alors
     Ecrire "Plus petit !"
   Finsi
 FinTantQue

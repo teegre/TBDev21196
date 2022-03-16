@@ -212,11 +212,12 @@ Lire accident
 Ecrire "Client depuis plus d'un an ? (O=1/N=0) : "
 Lire client
 Si (age < 25) Et (permis < 2)
-  Si (accident = 0) Et
+  Si (accident = 0) Alors
     Si (client = VRAI) Alors
       Ecrire "Tarif bleu"
     Sinon
       Ecrire "Tarif rouge"
+    Finsi
   Sinon
     Ecrire "Refusé"
   Finsi
@@ -268,7 +269,7 @@ Ecrire "Entrer le mois : "
 Lire mois
 Ecrire "Entrer l'année : "
 Lire annee
-b ← (a dp 4) Et ( (NON (a dp 100)) OU (a dp 400) )
+b ← (annee dp 4) Et ( (NON (annee dp 100)) Ou (annee dp 400) )
 Si mois < 1 Ou mois > 12 Alors
   valide ← FAUX
 SinonSi mois = 2 Alors
