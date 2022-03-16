@@ -16,12 +16,10 @@ Réponse :
 
 ```
 Debut
-Si Tutu > Toto + 4
-  Tutu ← Tutu + 1
-SinonSi Tata = "OK"
-    Tutu ← Tutu + 1
-Sinon
+Si NON (Tutu > Toto + 4) OU NON Tata = "OK" Alors
   Tutu ← Tutu - 1
+Sinon
+  Tutu ← Tutu + 1
 Finsi
 Fin
 ```
