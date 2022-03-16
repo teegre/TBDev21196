@@ -33,10 +33,8 @@ Ecrire "Entrer un autre nombre :"
 Lire n2
 Si (n1 < 0 Et n2 < 0) Ou (n1 > 0 Et n2 > 0) Alors
   Ecrire "Le produit de ces deux nombres est positif."
-Sinon
-  Si (n1 > 0 Et n2 < 0) Ou (n1 < 0 Et n2 > 0) Alors
-    Ecrire "Le produit de ces deux nombres est négatif."
-  Finsi
+SinonSi (n1 > 0 Et n2 < 0) Ou (n1 < 0 Et n2 > 0) Alors
+  Ecrire "Le produit de ces deux nombres est négatif."
 Finsi
 Fin
 ```
@@ -45,7 +43,24 @@ Fin
 
 *Ecrire un algorithme qui demande trois noms à l’utilisateur et l’informe ensuite s’ils sont rangés ou non dans l’ordre alphabétique.*
 
-Réponse : ???
+Réponse :
+
+```
+Variable nom1, nom2 et nom3 en Caractères
+Début
+Ecrire "Entrer nom 1 : "
+Lire nom1
+Ecrire "Entrer nom 2 : "
+Lire nom2
+Ecrire "Entrer nom 3 : "
+Lire nom3
+Si (nom1 < nom2) Et (nom2 < nom3) Alors
+  Ecrire "Les noms sont rangés dans l'ordre alphabétique."
+Sinon
+  Ecrire "Les noms ne sont pas rangés dans l'ordre alphabétique."
+Finsi
+Fin
+```
 
 ## Exercice 3.4
 
@@ -60,12 +75,10 @@ Ecrire "Entrer un nombre :"
 Lire n
 Si n = 0 Alors
   Ecrire "Le nombre est nul"
+SinonSi n < 0 Alors
+  Ecrire "Le nombre est négatif."
 Sinon
-  Si n < 0 Alors
-    Ecrire "Le nombre est négatif."
-  Sinon
-    Ecrire "Le nombre est positif."
-  Finsi
+  Ecrire "Le nombre est positif."
 Finsi
 Fin
 ```
@@ -86,13 +99,11 @@ Ecrire "Entrer un autre nombre :"
 Lire n2
 Si n 1 = 0 Ou n2 = 0 Alors
   Ecrire "Le produit de ces deux nombres est nul."
+SinonSi (n1 < 0 Et n2 < 0) Ou (n1 > 0 Et n2 > 0) Alors
+  Ecrire "Le produit de ces deux nombres est positif."
 Sinon
-  Si (n1 < 0 Et n2 < 0) Ou (n1 > 0 Et n2 > 0) Alors
-    Ecrire "Le produit de ces deux nombres est positif."
-  Sinon
-    Si (n1 > 0 Et n2 < 0) Ou (n1 < 0 Et n2 > 0) Alors
-    Ecrire "Le produit de ces deux nombres est négatif."
-  Finsi
+  Si (n1 > 0 Et n2 < 0) Ou (n1 < 0 Et n2 > 0) Alors
+  Ecrire "Le produit de ces deux nombres est négatif."
 Finsi
 Fin
 ```
@@ -117,18 +128,14 @@ Ecrire "Entrer âge :"
 Lire age
 Si age >= 6 Et age <= 7 Alors
   Ecrire "Poussin"
+SinonSi age >= 8 Et age <= 9 Alors
+  Ecrire "Pupille"
+SinonSi age >=10 Et age <= 11 Alors
+  Ecrire "Minime"
+SinonSi age >= 12 Alors
+  Ecrire "Cadet"
 Sinon
-  Si age >= 8 Et age <= 9 Alors
-    Ecrire "Pupille"
-  Sinon
-    Si age >=10 Et age <= 11 Alors
-      Ecrire "Minime"
-    Sinon
-      Si age >= 12 Alors
-        Ecrire "Cadet"
-      Finsi
-    Finsi
-  Finsi
+  Ecrire "Ouh le bébé !"
 Finsi
 Fin
 ```
