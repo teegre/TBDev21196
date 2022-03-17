@@ -269,10 +269,10 @@ Ecrire "Entrer le mois : "
 Lire mois
 Ecrire "Entrer l'année : "
 Lire annee
-bissextile ← (annee dp 4) Et ( (NON (annee dp 100)) Ou (annee dp 400) )
 Si mois < 1 Ou mois > 12 Alors
   valide ← FAUX
 SinonSi mois = 2 Alors
+  bissextile ← (annee dp 4) Et ( (NON (annee dp 100)) Ou (annee dp 400) )
   Si bissextile Et jour > 29 Alors
     valide ← FAUX
   SinonSi NON bissextile Et jour > 28 Alors
