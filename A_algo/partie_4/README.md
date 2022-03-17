@@ -269,7 +269,7 @@ Ecrire "Entrer le mois : "
 Lire mois
 Ecrire "Entrer l'année : "
 Lire annee
-b ← (annee dp 4) Et ( (NON (annee dp 100)) Ou (annee dp 400) )
+bissextile ← (annee dp 4) Et ( (NON (annee dp 100)) Ou (annee dp 400) )
 Si mois < 1 Ou mois > 12 Alors
   valide ← FAUX
 SinonSi mois = 2 Alors
@@ -278,7 +278,11 @@ SinonSi mois = 2 Alors
   SinonSi NON bissextile Et jour > 28 Alors
     valide ← FAUX
   Finsi
-SinonSi jour < 1 Ou jour > 31 Alors
+SinonSi (jour < 1) Alors
+  valide ← FAUX
+SinonSi (mois = 1 Ou mois = 3 Ou mois = 5 Ou mois = 7 Ou mois = 8 Ou mois = 10 Ou mois = 12) Et (jour > 31) Alors
+  valide ← FAUX
+SinonSi (mois = 4 Ou mois = 6 Ou mois = 9 Ou mois = 11) Et (jour > 30) Alors
   valide ← FAUX
 Sinon
   valide ← VRAI
