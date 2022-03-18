@@ -128,7 +128,7 @@ C ← A + B
 Fin
 ```
 
-Réponse : `cela produit une erreur car l'on ne peut pas ajouter des chaînes de caractères ensemble.`
+Réponse : `cela produit une erreur car l'on ne peut pas utiliser l'opérateur '+' pour concaténer deux chaînes de caractères.`
 
 ## Exercice 1.9
 
