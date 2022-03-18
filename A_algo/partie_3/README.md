@@ -119,25 +119,42 @@ Fin
 
 *Peut-on concevoir plusieurs algorithmes équivalents menant à ce résultat ?*
 
-Réponse :
+Réponse 1 :
 
 ```
 Variable age en Numérique
 Début
 Ecrire "Entrer âge :"
 Lire age
-Si age >= 6 Et age <= 7 Alors
+Si age = 6 Ou age = 7 Alors
   Ecrire "Poussin"
-SinonSi age >= 8 Et age <= 9 Alors
+SinonSi age = 8 Ou age = 9 Alors
   Ecrire "Pupille"
-SinonSi age >=10 Et age <= 11 Alors
+SinonSi age = 10 Ou age = 11 Alors
   Ecrire "Minime"
 SinonSi age >= 12 Alors
   Ecrire "Cadet"
-Sinon
-  Ecrire "Ouh le bébé !"
 Finsi
 Fin
 ```
 
 Il est effectivement possible de concevoir plusieurs algorithmes qui mènent au même résultat.
+
+Réponse 2 :
+
+```
+Variable age en Numérique
+Début
+Ecrire "Entrer âge :"
+Lire age
+Si age >= 6 Et age < 8 Alors
+  Ecrire "Poussin"
+SinonSi age < 10 Alors
+  Ecrire "Pupille"
+SinonSi age < 12 Alors
+  Ecrire "Minime"
+SinonSi age > 11 Alors
+  Ecrire "Cadet"
+Finsi
+Fin
+```
