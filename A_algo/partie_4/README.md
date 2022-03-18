@@ -30,7 +30,7 @@ Fin
 Il lira au clavier l’heure et les minutes, et il affichera l’heure qu’il sera une minute plus tard.*  
 *Par exemple, si l'utilisateur tape 21 puis 32, l'algorithme doit répondre :*
 
-*"Dans une minute, il sera 21 heure(s) 33".*
+>  Dans une minute, il sera 21 heure(s) 33.
 
 *NB : on suppose que l'utilisateur entre une heure valide. Pas besoin donc de la vérifier.*
 
@@ -62,7 +62,7 @@ Fin
 *Mais cette fois, il doit gérer également les secondes, et afficher l'heure qu'il sera une seconde plus tard.*  
 *Par exemple, si l'utilisateur tape 21, puis 32, puis 8, l'algorithme doit répondre :*
 
-*"Dans une seconde, il sera 21 heure(s), 32 minute(s) et 9 seconde(s)".*
+>  Dans une seconde, il sera 21 heure(s), 32 minute(s) et 9 seconde(s).
 
 *NB : là encore, on suppose que l'utilisateur entre une date valide.*
 
