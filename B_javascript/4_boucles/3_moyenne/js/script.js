@@ -1,5 +1,5 @@
 var nums = [];
-let n = 1;
+var n = 1;
 
 while (n != 0) {
   n = parseInt(prompt("Entrer un nombre entier (0 pour terminer) :"));
