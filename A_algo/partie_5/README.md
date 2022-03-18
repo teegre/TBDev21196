@@ -79,10 +79,15 @@ Fin
 *multiplication de ce nombre, présentée comme suit (cas où l'utilisateur entre le nombre 7) :*
 
 >  Table de 7 :
+
 >  7 x 1 = 7
+
 >  7 x 2 = 14
+
 >  7 x 3 = 21
+
 >  ...
+
 >  7 x 10 = 70
 
 Réponse :
@@ -149,11 +154,13 @@ Fin
 *quel était le plus grand parmi ces 20 nombres :*
 
 >  Entrez le nombre numéro 1 : 12
+
 >  Entrez le nombre numéro 2 : 14
 
 etc.
 
 >  Entrez le nombre numéro 20 : 6
+
 >  Le plus grand de ces nombres est : 14
 
 *Modifiez ensuite l’algorithme pour que le programme affiche de surcroît en quelle position avait été*  
@@ -283,6 +290,7 @@ deux messages affichés devront être :*
 *ci-dessus) :*
 
 >  X = n ! / (n - p) !
+
 >  Y = n ! / (p ! * (n – p) !)
 
 *NB : cet algorithme peut être écrit d’une manière simple, mais relativement peu performante. Ses*  
