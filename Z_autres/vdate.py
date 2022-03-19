@@ -1,8 +1,26 @@
 #! /usr/bin/env python
 
-jour = int(input('Jour  : '))
-mois = int(input('Mois  : '))
-annee = int(input('Année : '))
+while True:
+    try:
+        jour = int(input('Jour  : '))
+        break
+    except ValueError:
+        print('Un nombre est attendu...')
+        continue
+
+while True:
+    try:
+        mois = int(input('Mois  : '))
+        break
+    except ValueError:
+        print('Un nombre est attendu...')
+
+while True:
+    try:
+        annee = int(input('Année : '))
+        break;
+    except ValueError:
+        print('Un nombre est attendu...')
 
 if ( jour < 1 ):
     valide = False
