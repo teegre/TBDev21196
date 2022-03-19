@@ -25,7 +25,7 @@ read -rp "Mois  : " mois
 # et   0 les mois de 30 jours
 # on obtient :
 # 101010110101 (Ce qui en décimal donne le nombre 2741 et en hexadécimal, AB5.)
-# On déplaçe le nombre vers la droite de 11, 10, 9 rangs... jusqu'à 0, on obtient :
+# On déplace le nombre vers la droite de 11, 10, 9 rangs... jusqu'à 0, on obtient :
 # (1)----------- 11 Janvier
 # 1(0)---------- 10 Février
 # 10(1)--------- 09 Mars
