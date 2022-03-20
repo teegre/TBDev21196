@@ -1,27 +1,31 @@
 #! /usr/bin/env bash
 
-MOIS=( "Jan" "Fév" "Mar" "Avr" "Mai" "Jun" "Jul" "Aoû" "Sep" "Oct" "Nov" "Déc" )
+M=( "Jan" "Fév" "Mar" "Avr" "Mai" "Jun" "Jul" "Aoû" "Sep" "Oct" "Nov" "Déc" )
 
-read -rp "Mois  : " mois
+# Si le mois a été saisi en argument de la commande...
+m=$1
+
+# Sinon on demande la saisie.
+[[ $m ]] || read -rp "Mois  : " m
 
 # On vérifie si un nombre a bien été saisi...
-[[ $mois =~ [0-9]+ ]] || { echo "Erreur !"; exit 1; }
+[[ $m =~ [0-9]+ ]] || { echo "Erreur !"; exit 1; }
 
 # ... et si le mois entré est bien compris entre 1 et 12.
-(( mois >= 1 && mois <= 12 )) || { echo "Erreur !"; exit 1; }
+(( m >= 1 && m <= 12 )) || { echo "Erreur !"; exit 1; }
 
 # On demande l'année si le mois saisi est égal à 2.
-(( mois == 2 )) && {
-  read -rp "Année : " annee
+(( m == 2 )) && {
+  read -rp "Année : " a
 
   # On vérifie la validité de la saisie.
-  [[ $annee =~ [0-9]+ ]] || { echo "Erreur !"; exit 1; }
+  [[ $a =~ [0-9]+ ]] || { echo "Erreur !"; exit 1; }
 
-  # Si l'année est bissextile, on assigne 29 à la variable jours, sinon 28.
-  ((jours=( (annee % 4 == 0) && !(annee % 100== 0) || (annee % 400 == 0) ) == 1 ? 29 : 28))
+  # Si l'année est bissextile, on assigne 29 à la variable j, sinon 28.
+  ((j=( (a % 4 == 0) && !(a % 100== 0) || (a % 400 == 0) ) == 1 ? 29 : 28))
 
   # On affiche le résultat.
-  echo "${MOIS[$((mois-1))]} : $((jours)) jours."
+  echo "${M[$((m-1))]}   → $j jours."
   exit 0
 }
 
@@ -53,7 +57,7 @@ read -rp "Mois  : " mois
 #
 # Et on isole le bit le plus à droite.
 
-((jours=((0xAB5 >> 12 - mois) & 1) == 1 ? 31 : 30))
+((j=((0xAB5 >> 12 - m) & 1) == 1 ? 31 : 30))
 
 # On affiche le résultat.
-echo "${MOIS[$((mois-1))]} : $((jours)) jours."
+echo "${M[$((m-1))]}   → $j jours."
