@@ -5,7 +5,6 @@ while True:
         jour = int(input('Jour  : '))
         break
     except ValueError:
-        print('Un nombre est attendu...')
         continue
 
 while True:
@@ -13,14 +12,14 @@ while True:
         mois = int(input('Mois  : '))
         break
     except ValueError:
-        print('Un nombre est attendu...')
+        continue
 
 while True:
     try:
         annee = int(input('Année : '))
         break;
     except ValueError:
-        print('Un nombre est attendu...')
+        continue
 
 if ( jour < 1 ):
     valide = False
