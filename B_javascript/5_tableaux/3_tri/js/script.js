@@ -22,7 +22,7 @@ var T = new Array();
 
 // La longueur du tableau est comprise entre 5 et 10.
 l = Math.floor(Math.random() * 11)
-T.length = (l < 3 ? 5 : l);
+T.length = (l < 5 ? 5 : l);
 
 // On remplit le tableau avec des valeurs aléatoires comprises entre 0 et 100.
 for (var i = 0; i < T.length; i++) {
