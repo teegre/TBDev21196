@@ -6,7 +6,8 @@ while (n != 0) {
   if (n != 0 && !Number.isNaN(n)) nums.push(n);
 }
 
-let sum = 0;
+var sum = 0;
+
 for (const i of nums) {
   sum += i;
 }
