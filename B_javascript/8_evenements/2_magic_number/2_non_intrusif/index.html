@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Page web !</title>
+  </head>
+
+<body>
+
+  <h1>Nombre magique</h1>
+
+  <p>Trouvez le nombre magique ! Il est compris entre 1 et 10...</p>
+  
+  <div>
+    <label for="text" style="display: block; margin-bottom: 8px;">Entrez votre proposition :</label>
+    <input type="text" id="text" onKeyPress="keyPress(event)">
+    <input type="button" onClick="check()" value="Vérifier">
+  </div>
+
+  <div>
+    <p><span id="result" style="font-weight: bold;"></span></p>
+  </div>
+
+  <script src="js/script.js"></script>
+
+
+</body>
+</html>

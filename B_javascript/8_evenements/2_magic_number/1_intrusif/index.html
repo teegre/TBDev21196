@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Page web !</title>
+  </head>
+
+<body>
+
+  <h1>Nombre magique</h1>
+
+  <p>Trouvez le nombre magique ! Il est compris entre 1 et 10...</p>
+  
+  <div>
+    <label for="text" style="display: block; margin-bottom: 8px;">Entrez votre proposition :</label>
+    <input type="text" id="text" onKeyPress="keyPress(event)">
+    <input type="button" onClick="check()" value="Vérifier">
+  </div>
+
+  <div>
+    <p><span id="result" style="font-weight: bold;"></span></p>
+  </div>
+
+  <script>
+
+    function check() {
+      var reply = parseInt(document.getElementById("text").value);
+
+      if (Number.isNaN(reply)) {
+        writeResult('Ceci n\'est pas un nombre...');
+      } else if (reply > 10 || reply < 0) {
+        writeResult('Entre 1 et 10...');
+      } else if (reply > num) {
+        writeResult('Trop grand...');
+      } else if (reply < num) {
+        writeResult('Trop petit...');
+      } else {
+        writeResult('Vous avez gagné !');
+      }
+    }
+
+    function keyPress(event) {
+      if (event.keyCode == 13) { 
+        check();
+        return false;
+      }
+    }
+
+    function writeResult(msg) {
+      var result = document.getElementById("result");
+      result.innerHTML = msg;
+      focusInput();
+    }
+
+    function focusInput() {
+      document.getElementById("text").focus();
+    }
+
+    var num = Math.floor((Math.random() * 10) + 1);
+    document.getElementById("text").value = "";
+    document.getElementById("result").InnerHTML = "";
+    focusInput();
+  </script>
+
+
+</body>
+</html>
