@@ -17,7 +17,7 @@ while (name != null) {
   }
 }
 
-console.log("Vous avez entré " + count + " prénom(s).");
+console.log("Vous avez entré " + names.length + " prénom(s).");
 
 // single line if statement.
 if (count > 0) console.log("En voici la liste :");
