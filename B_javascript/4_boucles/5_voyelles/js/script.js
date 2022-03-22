@@ -1,7 +1,7 @@
 // mot
 var m = prompt('Entrer un mot au clavier :');
 
-if (m != null) {
+if (m != null && m != "") {
   // voyelles
   var V = [ 'a', 'e', 'é', 'è', 'ê', 'ë', 'i', 'î', 'ï', 'o', 'ô', 'ö', 'u', 'ù', 'û', 'ü', 'y' ];
   // nombre de voyelles
