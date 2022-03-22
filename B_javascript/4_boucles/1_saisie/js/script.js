@@ -7,11 +7,12 @@ var names = [];
 // /!\ name = ...
 // /!\ → endless loop...
 
-let  name = "";
+let name = "a";
 
-while (name != null) {
+while (name != null && name != "") {
   name = prompt("Saisissez le prénom N° " + (count + 1) +" ou cliquez sur Annuler pour arrêter la saisie.");
-  if (name != null) {
+  console.log(name);
+  if (name != null && name != "") {
     names.push(name);
     count++;
   }

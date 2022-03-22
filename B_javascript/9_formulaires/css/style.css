@@ -1,0 +1,37 @@
+label {
+  display: inline-block;
+  width: 30%;
+}
+
+input {
+  margin-bottom: 8px;
+  width: 40%;
+}
+
+textarea {
+  vertical-align: top;
+  margin-bottom: 8px;
+  width: 40%;
+  height: 25%;
+}
+
+#required, #required-text {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: red;
+  font-weight: bold;
+  display: inline
+}
+
+#required-text {
+  color: darkred;
+}
+
+.btn-container {
+  text-align: center
+}
+
+.btn {
+  display: inline-block;
+  width: 100px;
+}

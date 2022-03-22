@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Page web !</title>
+  </head>
+
+<body>
+
+  <script src="js/script.js"></script>
+
+  <form action="http://bienvu.net/script.php" method="POST">
+    <fieldset>
+      <p>
+        <div id="required">*</div>
+        <div id="required-text">Ces zones sont obligatoires pour envoyer le formulaire.</div>
+      </p>
+ 
+      <legend><b>Vos coordonnées :</b></legend>
+      
+      <label for="company">Société :</label>
+      <input type="text" name="company" pattern=".+" required>
+      <div id="required">*</div>
+      <label for="person">Personne à contacter :</label>
+      <input type="text" name="person" pattern=".+" required>
+      <div id="required">*</div><br>
+      <label for="address">Adresse de l'entreprise :</label>
+      <textarea name="address"></textarea><br>
+      <label for="zipcode">Code postal :</label>
+      <input type="text" name="zipcode" pattern="[0-9]{5}" required>
+      <div id="required">*</div><br>
+      <label for="city">Ville :</label>
+      <input type="text" name="city" pattern=".+" required>
+      <div id="required">*</div><br>
+      <label for="email">E-mail :</label>
+      <!--
+        <input type="email"> vérifie la validité de l'adresse entrée avant envoi...
+      -->
+      <input type="text" name="email" pattern="^.+@.+$" required>
+      <div id="required">*</div><br>
+      <label for="phone">Téléphone :</label>
+      <input type="text" name="phone">
+      <label for="techenv">Sélectionnez l'environnement technique du projet :</label>
+      <textarea name="techenv" id="techenv-text"></textarea><br>
+      <select id="techenv-listbox" onchange="updateText()">
+        <option value="" selected>Choisissez</option>
+        <option value="Access">Access</option>
+        <option value="java">Java</option>
+        <option value="Delphi">Delphi</option>
+        <option value="Windev">Windev</option>
+        <option value="Visual Basic">Visual Basic</option>
+        <option value="Power Builder">Power Builder</option>
+        <option value="Internet">Internet</option>
+        <option value="Intranet">Intranet</option>
+        <option value="Windows NT">Windows NT</option>
+        <option value="Unix">Unix</option>
+        <option value="SQL Server">SQL Server</option>
+        <option value="Oracle">Oracle</option>
+        <option value="Autres...">Autres...</option>
+      </select>
+      <div class="btn-container">
+        <input class="btn" type="submit" name="Envoyer">
+        <input class="btn" type="reset" name="Effacer">
+      </div>
+    </fieldset>
+  </form>
+
+</body>
+</html>
