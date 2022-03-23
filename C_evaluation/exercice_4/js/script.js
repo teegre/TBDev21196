@@ -18,7 +18,6 @@ else if (TOT > 200) REM = 0.1;
 else REM = 0;
 
 TOT -= TOT * REM;
-console.log('Prix après remise : ' + TOT);
 
 if (TOT <= 500) {
   PORT = TOT * 0.02;
