@@ -1,17 +1,9 @@
 function checkForm() {
+
+  // Nom
   var text = document.getElementById("firstname").value;
   var regex_text = new RegExp("[A-Za-z]+");
 
-  // Prénom
-  text = document.getElementById("firstname");
-  var result = regex_text.test(text)
-
-  if (!result) {
-    alert("Entrez votre prénom svp !");
-    return
-  }
-
-  // Nom
   text = document.getElementById("name").value;
   result = regex_text.test(text);
 
@@ -20,12 +12,20 @@ function checkForm() {
     return
   }
 
+  // Prénom
+  text = document.getElementById("firstname").value;
+  var result = regex_text.test(text)
+
+  if (!result) {
+    alert("Entrez votre prénom svp !");
+    return
+  }
+
   // Genre
   if (!document.getElementById("female").checked && !document.getElementById("male").checked) {
     alert("Sélectionnez votre genre svp !");
     return
   }
-
 
   // Date de naissance
   if (!document.getElementById("birthdate").value) {
@@ -44,19 +44,20 @@ function checkForm() {
     return
   }
 
-  // Sujet
-  if (!document.getElementById("subject").value) {
-    alert("Sélectionnez un sujet svp !");
-    return
-  }
-
   // E-mail
-  var regex_email = new RegExp("[A-Za-z0-9-_]+@[A-Za-z0-9-_]+\.[A-Za-z]");
+  // Pur info : https://www.ex-parrot.com/~pdw/Mail-RFC822-Address.html
+  var regex_email = new RegExp("^[A-Za-z0-9-_.]+@[a-zA-Z-_]+?\.[a-zA-Z]{2,3}$");
   text = document.getElementById("email").value;
   result = regex_email.test(text);
 
   if (!result) {
     alert("Entrez une adresse e-mail valide svp !");
+    return
+  }
+
+  // Sujet
+  if (!document.getElementById("subject").value) {
+    alert("Sélectionnez un sujet svp !");
     return
   }
 
