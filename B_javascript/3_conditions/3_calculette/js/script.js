@@ -23,8 +23,12 @@ if (a != null && b != null && !Number.isNaN(a) && !Number.isNaN(b)) {
       break;
 
     case "/" :
-      r = a / b;
-      console.log(a + " / " + b + " = "  + r);
+      if (b == 0) {
+        console.log("-ERR-");
+      } else {
+        r = a / b;
+        console.log(a + " / " + b + " = "  + r);
+      }
       break;
 
     default:
