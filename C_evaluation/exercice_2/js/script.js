@@ -3,9 +3,9 @@ function tableMultiplication(n) {
   h.innerHTML = 'Table de multiplication de ' + n;
   document.body.appendChild(h);
   for (var i = 1; i < 11; i++) {
-    var p = document.createElement("p");
-    p.innerHTML = i + ' x ' + n + ' = ' + (i*n);
-    document.body.appendChild(p);
+    var span = document.createElement("span");
+    span.innerHTML = i + ' x ' + n + ' = ' + (i*n) + '<br>';
+    document.body.appendChild(span);
   }
 }
 
