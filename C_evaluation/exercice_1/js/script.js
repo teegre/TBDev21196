@@ -18,6 +18,6 @@ while (age < 100) {
 
 // console.log('loop end: ' + age);
 
-console.log('Nombre de jeunes : ' + ages.J.length);
-console.log('Nombre de moyens : ' + ages.M.length);
-console.log('Nombre de vieux  : ' + ages.V.length);
+console.log('Nombre de jeunes : ' + ages.J.length + ' | ' + ages.J.join(', '));
+console.log('Nombre de moyens : ' + ages.M.length + ' | ' + ages.M.join(', '));
+console.log('Nombre de vieux  : ' + ages.V.length + ' | ' + ages.V.join(', '));
