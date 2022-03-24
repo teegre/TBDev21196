@@ -25,29 +25,31 @@
 
     <em>* Ces zones sont obligatoires</em>
 
-    <form action="http://bienvu.net/script.php" method="POST">
+    <form action="http://bienvu.net/script.php" method="POST" class="contact">
       <fieldset>
         <legend>Vos coordonnées</legend>
-        <label for="firstname">Nom* : </label>
-        <input type=text name="firstname" required><br>
-        <label for="name">Prénom* : </label>
-        <input type=text name="name" required><br>
+        <label for="name">Nom* : </label>
+        <input type=text name="name" placeholder="Nom..." required><br>
+        <label for="firstname">Prénom* : </label>
+        <input type=text name="firstname" placeholder="Prénom..." required><br>
+        <div class="genre">
+          <label for="genre">Sexe* :</label>
+          <input type="radio" name="genre" value="female" required>
+          <label for="female">Féminin</label>
+          <input type="radio" name="genre" value="male">
+          <label for="male">Masculin</label>
+        </div>
         <br>
-        <label for="genre">Sexe* :</label>
-        <input type="radio" name="genre" value="female" required>Féminin
-        <input type="radio" name="genre" value="male">Masculin
-        <br>
-        <br>
-        <label for="birthdate">Date de naissance* : </label>
+        <label for="birthdate">Date de naissance* :</label>
         <input type="date" name="birthdate" required><br>
-        <label for="zipcode">Code postal* : </label>
-        <input type="text" name="zipcode" pattern="[0-9]{5}" required><br>
+        <label for="zipcode">Code postal* :</label>
+        <input type="text" name="zipcode" pattern="[0-9]{5}" placeholder="Code postal..." required><br>
         <label for="address">Adresse : </label>
-        <input type=text name="address"><br>
+        <input type=text name="address" placeholder="Adresse..."><br>
         <label for="city">Ville : </label>
-        <input type=text name="city" target="[A-Za-z]"><br>
+        <input type=text name="city" pattern="[A-Za-z]+" placeholder="Ville..."><br>
         <label for="email">E-mail* : </label>
-        <input type="email" name="email" placeholder="nom@exemple.com" required><br>
+        <input type="email" name="email" placeholder="nom@exemple.com" required>
       </fieldset>
 
       <fieldset>
@@ -65,14 +67,14 @@
         <textarea name="question" required></textarea>
       </fieldset>
 
-      <div>
+      <div class="process">
         <input type="checkbox" name="process" required>
         <label for="process">* J'accepte le traitement informatique de ce formulaire</label>
       </div>
 
-      <div>
-        <input type="submit">
-        <input type="button" name="cancel" value="Annuler">
+      <div class="btn-container">
+        <input type="submit" value="Envoyer" class="btn">
+        <input type="reset"  value="Annuler" class="btn">
       </div>
 
     </form>

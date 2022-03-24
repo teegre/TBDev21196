@@ -19,8 +19,8 @@ h2 {
 #hdr {
   display: inline-block;
   text-align: center;
-  width: 55%;
-  font-size: 1.25rem;
+  width: 50%;
+  font-size: 1.5rem;
 }
 
 nav {
@@ -29,7 +29,6 @@ nav {
   margin-bottom: 0.25rem;
   box-sizing: border-box;
   padding: 0.05rem;
-  width: 80%;
 }
 
 .menu {
@@ -43,22 +42,21 @@ nav {
 }
 
 #banner {
-  width: 80%;
+  width: 100%;
+}
+
+#table-xscroll {
+  overflow-x: auto;
 }
 
 table {
-  width: 80%;
+  width: 100%;
   text-align: left;
   font-size: 1rem;
 }
 
-form {
-  width: 80%;
-}
-
 .main {
   display: flex;
-  width: 80%;
   margin-bottom: 0.25rem;
 }
 
@@ -78,6 +76,44 @@ form {
   font-size: 0.75rem;
 }
 
+.contact {
+  box-sizing: border-box;
+}
+
+fieldset {
+  border-radius: 4px;
+}
+
+label {
+  display: inline-block;
+  padding: 12px 12px 12px 0;
+}
+
+input[type=text], input[type=date], select, textarea {
+  width: 90%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+textarea {
+  vertical-align: top;
+}
+
+.genre label, .genre input {
+  width: 3rem;
+}
+
+.btn-container {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  width: 100px;
+}
+
 @media (max-width: 767px) {
   .right-col {
     display: none;
@@ -90,6 +126,15 @@ form {
   .menu {
     display: block;
     margin: 0.05rem;
+  }
+
+  label {
+    display: block;
+    margin-top: 4px;
+  }
+
+  input {
+    margin-bottom: 4px;
   }
 }
 
