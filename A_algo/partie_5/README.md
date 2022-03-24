@@ -99,7 +99,7 @@ Ecrire "Entrer un nombre :"
 Lire n
 Ecrire "Table de " & n & " :"
 Pour i ← 1 à 10
-  Ecrire n & " x " & i & " = " & n * i
+  Ecrire n & " x " & i & " = " & (n * i)
 i Suivant
 Fin
 ```
