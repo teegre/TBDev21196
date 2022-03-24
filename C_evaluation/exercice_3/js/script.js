@@ -7,15 +7,21 @@ function search(name) {
   return -1;
 }
 
+function print(msg) {
+  document.getElementById('names').innerHTML = msg;
+}
+
 function displayList() {
-  document.getElementById('names').innerHTML = tab.join(' / ');
+  print(tab.join(' / '));
 }
 
 displayList();
 
 let prenom = ' ';
+var count = 0;
+var over = false;
 
-while (prenom != '' && prenom != null) {
+while (count < tab.length) {
   prenom = prompt('Entrer un prénom à rechercher :');
   if (prenom != '' && prenom != null) {
     var index = search(prenom.toLowerCase())
@@ -23,6 +29,13 @@ while (prenom != '' && prenom != null) {
       tab.splice(index, 1);
       tab.push('');
       displayList();
-    } else alert('Non trouvé !');
+      count++;
+    } else {
+      alert('Non trouvé !');
+      break;
+    }
   }
 }
+
+if (count == tab.length) print('Gagné !');
+else print('Perdu !');
