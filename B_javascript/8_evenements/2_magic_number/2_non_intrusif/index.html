@@ -10,12 +10,13 @@
 
   <h1>Nombre magique</h1>
 
-  <p>Trouvez le nombre magique ! Il est compris entre 1 et 10...</p>
+  <p>Trouvez le nombre magique ! Il est compris entre 1 et 100...</p>
   
   <div>
     <label for="text" style="display: block; margin-bottom: 8px;">Entrez votre proposition :</label>
     <input type="text" id="text" onKeyPress="keyPress(event)">
-    <input type="button" onClick="check()" value="Vérifier">
+    <input type="button" onClick="check()" value="Vérifier" id="check">
+    <input type="button" onClick="location.reload(true)" value="Encore !" id="restart" style="display: none;">
   </div>
 
   <div>

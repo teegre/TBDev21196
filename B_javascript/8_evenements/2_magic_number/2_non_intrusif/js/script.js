@@ -1,28 +1,42 @@
 function check() {
-  var reply = parseInt(document.getElementById("text").value);
+  var text = document.getElementById("text");
+  var reply = parseInt(text.value);
 
   if (Number.isNaN(reply)) {
     writeResult('Ceci n\'est pas un nombre...');
-  } else if (reply > 10 || reply < 0) {
-    writeResult('Entre 1 et 10...');
+  } else if (reply > 100 || reply < 1) {
+    writeResult('Entre 1 et 100...');
   } else if (reply > num) {
     writeResult('Trop grand...');
   } else if (reply < num) {
     writeResult('Trop petit...');
   } else {
     writeResult('Vous avez gagné !');
+    win = true;
   }
+  text.select();
+
 }
 
 function keyPress(event) {
-  if (event.keyCode == 13) { 
+  if (event.keyCode == 13 && !win) {
     check();
-    return false;
+    if (win) {
+      var btn = document.getElementById('check');
+      btn.style.display = 'none';
+      btn = document.getElementById('restart');
+      btn.style.display = 'inline-block';
+    }
   }
 }
 
-function writeResult(msg) {
+//
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+async function writeResult(msg) {
   var result = document.getElementById("result");
+  result.innerHTML = '';
+  await sleep(250);
   result.innerHTML = msg;
   focusInput();
 }
@@ -31,8 +45,8 @@ function focusInput() {
   document.getElementById("text").focus();
 }
 
-var num = Math.floor((Math.random() * 10) + 1);
+var num = Math.floor((Math.random() * 100) + 1);
+var win = false;
 document.getElementById("text").value = "";
 document.getElementById("result").InnerHTML = "";
 focusInput();
-
