@@ -14,9 +14,9 @@ function tableMultiplication(n) {
 
     rows.appendChild(row);
 
-    f1.innerHTML = i;
+    f1.innerHTML = n;
     x.innerHTML = 'x';
-    f2.innerHTML = n;
+    f2.innerHTML = i;
     eq.innerHTML = '=';
     p.innerHTML = (i*n);
 
