@@ -1,11 +1,30 @@
 function tableMultiplication(n) {
-  var h = document.createElement("h1")
-  h.innerHTML = 'Table de multiplication de ' + n;
-  document.body.appendChild(h);
+  var cap = document.getElementById('cap');
+  cap.innerHTML = '<h1>Table des ' + n + '</h1>';
+
+  var rows = document.getElementById('tbody');
+
   for (var i = 1; i < 11; i++) {
-    var span = document.createElement("span");
-    span.innerHTML = i + ' x ' + n + ' = ' + (i*n) + '<br>';
-    document.body.appendChild(span);
+    var row =  document.createElement('tr');
+    var f1 =   document.createElement('td');
+    var x =    document.createElement('td');
+    var f2 =   document.createElement('td');
+    var eq =   document.createElement('td');
+    var p  =   document.createElement('td');
+
+    rows.appendChild(row);
+
+    f1.innerHTML = i;
+    x.innerHTML = 'x';
+    f2.innerHTML = n;
+    eq.innerHTML = '=';
+    p.innerHTML = (i*n);
+
+    row.appendChild(f1);
+    row.appendChild(x);
+    row.appendChild(f2);
+    row.appendChild(eq);
+    row.appendChild(p);
   }
 }
 
