@@ -1,31 +1,22 @@
 #multiply {
   font-family: Arial, Helvetica, sans-serif;
-  width: auto;
-  height: auto;
+  font-size: 1.25rem;
   text-align: center;
   border-collapse: collapse;
-  table-layout: auto;
+  //border: 1px solid #CCC;
   overflow-x: auto;
 }
 
 #multiply caption {
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   background-color: #444;
   color: #DDD;
+  border-radius: 4px;
   margin: 0 0 4px 0;
 }
 
 #multiply tr:hover {
- background-color: #EEE;
-}
-
-#multiply, #multiply td, #multiply th {
-  border: 1px solid #CCC;
-}
-
-#multiply th {
-  background-color: gainsboro;
-  color: black;
-  text-align: left;
+  background-color: #444;
+  color: #DDD;
 }
