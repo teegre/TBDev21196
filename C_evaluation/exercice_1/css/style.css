@@ -1,0 +1,28 @@
+#count {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+#count caption {
+  text-align: left;
+  font-size: 0.65rem;
+  background-color: #444;
+  color: #DDD;
+  margin: 0 0 4px 0;
+}
+
+#count tr:hover {
+ background-color: #EEE;
+}
+
+#count, #count td, #count th {
+  border: 1px solid #CCC;
+}
+
+#count th {
+  background-color: gainsboro;
+  color: black;
+  text-align: left;
+}
