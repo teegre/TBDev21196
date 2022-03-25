@@ -1,3 +1,8 @@
+function writeTd(id, value) {
+  var td = document.getElementById(id);
+  td.innerHTML = value;
+}
+
 var ages = { J: [], M: [], V: [] };
 var age = 0;
 
@@ -10,14 +15,28 @@ while (age < 100) {
     age = 0; // Pour une raison que j'ignore si age == NaN, la boucle se termine...
     continue;
   }
-  if (age < 20) ages.J.push(age);
-  else if (age > 40 && age < 100) ages.V.push(age);
-  else if (age >= 20 && age <= 40) ages.M.push(age);
-  else if (age >= 100) ages.V.push(age);
+
+  if (age < 20) {
+    ages.J.push(age);
+    writeTd("jcount", ages.J.length);
+  }
+
+  else if (age > 40 && age < 100) {
+    ages.V.push(age);
+    writeTd("vcount", ages.V.length);
+  }
+
+  else if (age >= 20 && age <= 40) {
+    ages.M.push(age);
+    writeTd("mcount", ages.M.length);
+  }
+
+  else if (age >= 100) {
+    ages.V.push(age);
+    writeTd("vcount", ages.V.length);
+  }
 }
 
-// console.log('loop end: ' + age);
-
-console.log('Nombre de jeunes : ' + ages.J.length + ' | ' + ages.J.join(', '));
-console.log('Nombre de moyens : ' + ages.M.length + ' | ' + ages.M.join(', '));
-console.log('Nombre de vieux  : ' + ages.V.length + ' | ' + ages.V.join(', '));
+console.table(ages.J);
+console.table(ages.M);
+console.table(ages.V);

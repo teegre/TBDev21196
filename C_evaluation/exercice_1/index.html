@@ -3,10 +3,37 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/style.css">
     <title>Calcul du nombre de jeunes, de moyens et de vieux</title>
   </head>
 
 <body>
+
+  <table id="count">
+    <caption>
+      <h1>Nombre de jeunes, de moyens et de vieux</h1>
+    </caption>
+    <thead>
+      <tr>
+        <th>Catégorie</th>
+        <th>Nombre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td title="Age inférieur à 20 ans">Jeunes</td>
+        <td id="jcount"></td>
+      </tr>
+      <tr>
+        <td title="Age supérieur à 19 ans et inférieur à 41 ans">Moyens</td>
+        <td id="mcount"></td>
+      </tr>
+      <tr>
+        <td title="Age supérieur à 40 ans">Vieux</td>
+        <td id="vcount"></td>
+      </tr>
+    </tbody>
+  </table>
 
   <script src="js/script.js"></script>
 
