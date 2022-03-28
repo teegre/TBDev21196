@@ -30,7 +30,7 @@ function checkForm(event) {
 
   if (!regex.test(prenom.value)) {
     event.preventDefault();
-    alert("Entrez votre prénom svp !");
+    alert("Prénom invalide !");
     return
   }
 
@@ -76,7 +76,7 @@ function checkForm(event) {
 
   if (!regex_email.test(email.value)) {
     event.preventDefault();
-    alert("Entrez une adresse e-mail valide svp !");
+    alert("Adresse e-mail invalide !");
     return
   }
 
