@@ -8,7 +8,7 @@ Implémentation de l'exercice 4.8 d'algorithmique en `Bash` et en `Python`
 
 Un script `Bash` qui donne le nombre de jours pour un mois donné. Demande la saisie de l'année si le mois entré est égal à 2.
 
-# binclock.sh + binclock
+## binclock.sh + binclock
 
 Une horloge qui affiche l'heure en binaire (version Bash + HTML/CSS/Javascript).
 
