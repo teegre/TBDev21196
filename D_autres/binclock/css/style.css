@@ -1,0 +1,17 @@
+html {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #222;
+  color: #333;
+}
+
+#binclock {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#clock {
+  font-size: 7rem;
+  width: 555px;
+  text-align: center;
+  border: 1px solid;
+}
