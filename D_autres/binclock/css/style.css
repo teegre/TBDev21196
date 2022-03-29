@@ -1,17 +1,47 @@
 html {
   font-family: 'Courier New', Courier, monospace;
-  background-color: #222;
-  color: #333;
+  background-color: #111;
+  color: rebeccapurple;
 }
 
 #binclock {
-  font-size: 1rem;
+  font-size: 1em;
   font-weight: bold;
 }
 
 #clock {
-  font-size: 7rem;
-  width: 555px;
+  font-size: 6em;
+  position: absolute;
   text-align: center;
   border: 1px solid;
+}
+
+#H1, #H2 {
+  background: #112;
+}
+
+#M1, #M2 {
+  background: #223;
+}
+
+#S1, #S2 {
+  background: #222;
+}
+
+@media all and (min-device-width: 720px){
+    #clock {
+        font-size: 9.75em;
+    }
+}
+
+@media all and (max-device-width: 640px){
+    #clock {
+      font-size: 4em;
+    }
+}
+
+@media all and (max-device-width: 320px){
+    #clock {
+        font-size: 2em;
+    }
 }
