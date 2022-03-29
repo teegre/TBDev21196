@@ -1,3 +1,12 @@
+function updateTitles(H1, H2, M1, M2, S1, S2) {
+  document.getElementById("H1").title = H1;
+  document.getElementById("H2").title = H2;
+  document.getElementById("M1").title = M1;
+  document.getElementById("M2").title = M2;
+  document.getElementById("S1").title = S1;
+  document.getElementById("S2").title = S2;
+}
+
 function getBinTime() {
   var binDigits = [
     "0000",
@@ -19,6 +28,8 @@ function getBinTime() {
   var M2 = String(currentDate.getMinutes()).padStart(2, "0").substr(1, 1);
   var S1 = String(currentDate.getSeconds()).padStart(2, "0").substr(0, 1);
   var S2 = String(currentDate.getSeconds()).padStart(2, "0").substr(1, 1);
+
+  updateTitles(H1, H2, M1, M2, S1, S2);
 
   return [ binDigits[H1], binDigits[H2], binDigits[M1], binDigits[M2], binDigits[S1], binDigits[S2] ];
 }
