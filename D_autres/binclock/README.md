@@ -18,17 +18,16 @@ A binary clock made in Bash.
 * <kbd>c</kbd> change color.
 * <kbd>q</kbd> quit.
 * <kbd>r</kbd> redraw clock.
-* 
 
 ## Install
 
 `make install`
 
-
-
 ## Uninstall
 
 `make uninstall`
+
+
 
 
 
