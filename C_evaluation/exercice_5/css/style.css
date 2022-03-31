@@ -1,0 +1,54 @@
+label {
+  display: inline-block;
+  width: 30%;
+}
+
+input {
+  margin-bottom: 8px;
+  width: 40%;
+}
+
+#genre-label {
+  display: inline-block;
+  width: 30%;
+}
+
+.genre {
+  display: inline-block;
+}
+
+input[type=radio] {
+  width: 16px;
+}
+
+.check {
+  display: inline-block;
+}
+
+.check aside {
+  float: right;
+}
+
+.check #process {
+  width: 16px;
+}
+
+.check label {
+  position: fixed;
+  width: 100%;
+}
+
+textarea {
+  vertical-align: top;
+  margin-bottom: 8px;
+  width: 40%;
+  height: 25%;
+}
+
+.btn-container {
+  text-align: center;
+}
+
+.btn {
+  width: 100px;
+}
