@@ -1,6 +1,3 @@
-var formButton = document.getElementById("submit");
-formButton.addEventListener('click', checkForm);
-
 function checkForm(event) {
 
   // Nom
@@ -9,6 +6,8 @@ function checkForm(event) {
   if (nom.validity.valueMissing) {
     event.preventDefault();
     alert("Entrez votre nom svp !");
+    nom.focus();
+    nom.placeholder = "Votre nom";
     return
   }
 
@@ -17,6 +16,7 @@ function checkForm(event) {
   if (!regex.test(nom.value)) {
     event.preventDefault();
     alert("Nom invalide !");
+    nom.focus();
     return
   }
 
@@ -25,12 +25,15 @@ function checkForm(event) {
   if (prenom.validity.valueMissing) {
     event.preventDefault();
     alert("Entrez votre prénom svp !");
+    prenom.focus();
+    prenom.placeholder = "Votre prénom"
     return
   }
 
   if (!regex.test(prenom.value)) {
     event.preventDefault();
     alert("Prénom invalide !");
+    prenom.focus();
     return
   }
 
@@ -42,9 +45,11 @@ function checkForm(event) {
   }
 
   // Date de naissance
-  if (!document.getElementById("birthdate").value) {
+  var birth = document.getElementById("birthdate");
+  if (birth.validity.valueMissing) {
     event.preventDefault();
     alert("Entrez votre date de naissance svp !");
+    birth.focus()
     return
   }
 
@@ -55,28 +60,34 @@ function checkForm(event) {
   if (zipcode.validity.valueMissing) {
     event.preventDefault();
     alert("Entrez votre code postal svp !")
+    zipcode.focus();
+    zipcode.placeholder = "Votre code postal";
     return
   }
 
   if (!regex_zip.test(zipcode.value)) {
+    event.preventDefault();
     alert("Entrez le code postal sur 5 chiffres svp !");
+    zipcode.focus();
     return
   }
 
   // E-mail
   // Pour info : https://www.ex-parrot.com/~pdw/Mail-RFC822-Address.html
-  var regex_email = new RegExp("^[A-Za-z0-9-_.]+@[a-zA-Z-_]+?\.[a-zA-Z]{2,3}$");
+  var regex_email = new RegExp("^[A-Za-z0-9-_.]+@[a-zA-Z0-9-_.]+\.[a-zA-Z]{2,3}$");
   var email = document.getElementById("email");
 
   if (email.validity.valueMissing) {
     event.preventDefault();
     alert("Entrez votre adresse e-mail svp !");
+    email.focus();
     return
   }
 
   if (!regex_email.test(email.value)) {
     event.preventDefault();
     alert("Adresse e-mail invalide !");
+    email.focus();
     return
   }
 
@@ -85,6 +96,7 @@ function checkForm(event) {
   if (sujet.validity.valueMissing) {
     event.preventDefault();
     alert("Sélectionnez un sujet svp !");
+    sujet.focus();
     return
   }
 
@@ -93,13 +105,20 @@ function checkForm(event) {
   if (question.validity.valueMissing) {
     event.preventDefault();
     alert("Entrez votre question svp !");
+    question.focus();
+    question.placeholder = "Votre question"
     return
   }
 
   // Traitement
-  if (!document.getElementById("process").checked) {
+  var check = document.getElementById("process")
+  if (!check.checked) {
     event.preventDefault();
     alert("Veuillez cocher la case svp !");
+    check.focus();
     return
   }
 }
+
+var formButton = document.getElementById("submit");
+formButton.addEventListener('click', checkForm);
