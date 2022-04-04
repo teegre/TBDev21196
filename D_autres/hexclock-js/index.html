@@ -7,14 +7,27 @@
     <title>HexClock®</title>
   </head>
 <body>
-  <span id="hexclock">HexClock®</span>
-  <div id="clock">
-    <span class="guide" id ="g-hours">00 00</span>
-    <span class="digit" id="hours">0x00</span>
-    <span class="guide" id="g-minutes">00 00</span>
-    <span class="digit" id="minutes">0x00</span>
-    <span class="guide" id="g-seconds">00 00</span>
-    <span class="digit" id="seconds">0x00</span>
+  <p id="hexclock-title">HexClock®<p>
+  <div class="msgbox" style="display: none">
+    <span class="btnclose">&times;</span>
+    <p><strong>HexClock®</strong> 0x01<br>by <a href="https://github.com/teegre" target="_blank">Teegre</a></p>
+  </div>
+  <div class="hexclock">
+    <div class="guide">
+      <span id="g-hours-dec">00</span>
+      <span id="g-hours-unity">00</span>
+    </div>
+    <div><span class="digit" id="hours">00</span></div>
+    <div class=guide>
+      <span id="g-minutes-dec">00</span>
+      <span id="g-minutes-unity">00</span>
+    </div>
+    <div><span class="digit" id="minutes">00</span></div>
+    <div class="guide">
+      <span id="g-seconds-dec">00</span>
+      <span id="g-seconds-unity">00</span>
+    </div>
+    <div><span class="digit" id="seconds">00</span></div>
   </div>
   <script src="js/script.js"></script>
 </body>

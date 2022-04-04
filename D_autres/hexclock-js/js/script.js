@@ -1,9 +1,9 @@
 function toHex(n, d) {
-  const hex = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F" ];
+  const hex = "0123456789ABCDEF";
   var hstr = "";
 
   while ( n > 0 ) {
-    hstr = hex[Math.floor(n % 16)] + hstr;
+    hstr = hex.substr(Math.floor(n % 16), 1) + hstr;
     n = Math.floor(n / 16);
     d--;
   }
@@ -17,9 +17,9 @@ function toHex(n, d) {
 }
 
 function guide(n) {
-  g1 = ( Math.floor(n / 16) >= 1 ? (Math.floor(n / 16) * 16).toString() : "00" );
-  g2 = ( Math.floor(n % 16).toString() );
-  return g1.padStart(2, "0") + " " + g2.padStart(2, "0")
+  const g1 = ( Math.floor(n / 16) >= 1 ? (Math.floor(n / 16) * 16).toString() : "00" );
+  const g2 = ( Math.floor(n % 16).toString() );
+  return [ g1.padStart(2, "0"), g2.padStart(2, "0") ];
 }
 
 function displayClock() {
@@ -27,13 +27,31 @@ function displayClock() {
   var h = date.getHours();
   var m = date.getMinutes();
   var s = date.getSeconds();
+  var g = ""
 
   document.getElementById("hours").innerHTML = toHex(h, 2);
-  document.getElementById("g-hours").innerHTML = guide(h);
+  g = guide(h);
+  document.getElementById("g-hours-dec").innerHTML = g[0];
+  document.getElementById("g-hours-unity").innerHTML = g[1];
   document.getElementById("minutes").innerHTML = toHex(m, 2);
-  document.getElementById("g-minutes").innerHTML = guide(m);
+  g = guide(m);
+  document.getElementById("g-minutes-dec").innerHTML = g[0];
+  document.getElementById("g-minutes-unity").innerHTML = g[1];
   document.getElementById("seconds").innerHTML = toHex(s, 2);
-  document.getElementById("g-seconds").innerHTML = guide(s);
+  g = guide(s);
+  document.getElementById("g-seconds-dec").innerHTML = g[0];
+  document.getElementById("g-seconds-unity").innerHTML = g[1];
 }
+
+const hct = document.getElementById("hexclock-title");
+hct.addEventListener("click", function() {
+  document.getElementsByClassName("msgbox")[0].style.display = "inline-block";
+  document.getElementById("hexclock-title").style.display = "none";
+});
+
+const btnclose = document.getElementsByClassName("btnclose")[0].addEventListener("click", function () {
+  document.getElementsByClassName("msgbox")[0].style.display = "none";
+  document.getElementById("hexclock-title").style.display = "inherit";
+});
 
 window.setInterval(displayClock, 1000);
