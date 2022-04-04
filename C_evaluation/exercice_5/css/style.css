@@ -5,7 +5,13 @@ label {
 
 input {
   margin-bottom: 8px;
+  margin-right: 4px;
   width: 40%;
+}
+
+.err {
+  font-size: 0.75rem;
+  font-weight: bold;
 }
 
 #genre-label {
@@ -19,6 +25,10 @@ input {
 
 input[type=radio] {
   width: 16px;
+}
+
+#subject {
+  width: 40%;
 }
 
 .check {

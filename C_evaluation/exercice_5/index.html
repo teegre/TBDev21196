@@ -15,9 +15,11 @@
     <fieldset>
       <legend>Vos coordonnées</legend>
       <label for="name">Nom* : </label>
-      <input type=text name="name" id="name" required><br>
+      <input type=text name="name" id="name" required>
+      <span class="err" id="err-name"></span><br>
       <label for="firstname">Prénom* : </label>
-      <input type=text name="firstname" id="firstname" required><br>
+      <input type=text name="firstname" id="firstname" required>
+      <span class="err" id="err-firstname"></span><br>
       <br>
       <span id="genre-label">Sexe* : </span>
       <div class="genre">
@@ -29,15 +31,18 @@
       <br>
       <br>
       <label for="birthdate">Date de naissance* : </label>
-      <input type="date" name="birthdate" id="birthdate" required><br>
+      <input type="date" name="birthdate" id="birthdate" required>
+      <span class="err" id="err-birthdate"></span><br>
       <label for="zipcode">Code postal* : </label>
-      <input type="text" name="zipcode" id="zipcode" required><br>
+      <input type="text" name="zipcode" id="zipcode" required>
+      <span class="err" id="err-birthdate"></span><br>
       <label for="address">Adresse : </label>
       <input type=text name="address" id="address"><br>
       <label for="city">Ville : </label>
       <input type=text name="city" id="city"><br>
       <label for="email">E-mail* : </label>
-      <input type="text" name="email" placeholder="nom@example.com" id="email" required><br>
+      <input type="text" name="email" placeholder="nom@example.com" id="email" required>
+      <span class="err" id="err-email"></span><br>
     </fieldset>
     <fieldset>
       <legend>Votre demande</legend>
@@ -49,9 +54,10 @@
         <option value="inquiry">Réclamation</option>
         <option value="other">Autres</option>
       </select>
-      <br>
+      <span class="err" id="err-subject"></span><br>
       <label for="question">Votre question : </label>
       <textarea name="question" id="question" required></textarea>
+      <span class="err" id="err-question"></span><br>
     </fieldset>
     <div class="check">
       <input type="checkbox" name="process" id="process" required>

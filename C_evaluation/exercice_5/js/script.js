@@ -5,13 +5,18 @@ function checkForm(event) {
 
   if (nom.validity.valueMissing) {
     event.preventDefault();
-    alert("Entrez votre nom svp !");
     nom.focus();
     nom.placeholder = "Votre nom";
+    var err = document.getElementById("err-name")
+    nom.addEventListener(["change", "", function () {
+      err.textContent = "";
+    });
+    err.style.color = "red";
+    err.textContent = "Requis";
     return
   }
 
-  var regex = new RegExp("[A-Za-z]+");
+  var regex = new RegExp("[A-Za-z-]+");
 
   if (!regex.test(nom.value)) {
     event.preventDefault();
