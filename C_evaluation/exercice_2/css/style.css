@@ -4,6 +4,7 @@
   text-align: center;
   border-collapse: collapse;
   overflow-x: auto;
+  cursor: default;
 }
 
 #multiply caption {
@@ -18,4 +19,5 @@
 #multiply tr:hover {
   background-color: #444;
   color: #DDD;
+  transition: .4s;
 }
