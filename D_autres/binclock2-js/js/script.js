@@ -19,28 +19,40 @@ function displayDigit(row, bn) {
   var b;
   var g = 32;
   var gg;
+  var bg = "#333333"
 
   for (var i = 0; i < 6; i++) {
     b = bn.substr(i, 1);
     r = document.getElementById(row+(i+1).toString());
+    gg = document.getElementById(row+"g"+g.toString());
+
+    switch (row) {
+      case "h":
+        var fg = "#FF0030"
+        break;
+      case "m":
+        var fg = "#FF0040"
+        break;
+      case "s":
+        var fg = "#FF0050"
+        break;
+    }
 
     switch(b) {
       case "0":
         r.textContent = b;
-        r.style.backgroundColor = "#333333";
-        r.style.color = "#FF0030";
-        gg = document.getElementById(row+"g"+g.toString());
-        gg.textContent = ".";
-        gg.style.backgroundColor = "#333333";
-        gg.style.color = "#FF0030"
+        r.style.backgroundColor = bg;
+        r.style.color = fg;
+        gg.textContent = row;
+        gg.style.backgroundColor = bg;
+        gg.style.color = fg;
         break;
       case "1":
         r.innerHTML = "<b>"+b+"</b>"
-        r.style.backgroundColor = "#FF0030";
-        r.style.color = "#333333"
-        gg = document.getElementById(row+"g"+g.toString());
+        r.style.backgroundColor = fg;
+        r.style.color = bg;
         gg.textContent = g.toString();
-        gg.style.backgroundColor = "#FF0030";
+        gg.style.backgroundColor = fg 
         gg.style.color = "whitesmoke";
         break;
     }
