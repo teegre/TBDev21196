@@ -1,3 +1,49 @@
+html * {
+  font-family: "Times New Roman", Times, serif;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+#logo {
+  display: inline-block;
+  vertical-align: middle;
+  width: 9.375rem;
+}
+
+#hdr {
+  display: inline-block;
+  text-align: center;
+  width: 50%;
+  font-size: 1.5rem;
+}
+
+nav {
+  background: #000;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  box-sizing: border-box;
+  padding: 0.05rem;
+}
+
+.menu {
+  display: inline-block;
+  margin: 0.05rem;
+}
+
+.menu a {
+  color: #FFF;
+  font-size: 0.75rem;
+}
+
+#banner {
+  width: 100%;
+}
 label {
   display: inline-block;
   width: 30%;
@@ -61,4 +107,24 @@ textarea {
 
 .btn {
   width: 100px;
+}
+
+@media (max-width: 767px) {
+  .right-col {
+    display: none;
+  }
+
+  .left-col {
+    width: 100%;
+  }
+
+  .menu {
+    display: block;
+    margin: 0.05rem;
+  }
+}
+
+.main hr {
+  color: #FFFFFF;
+  margin-left: 0rem;
 }
