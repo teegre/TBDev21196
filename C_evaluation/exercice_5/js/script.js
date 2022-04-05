@@ -1,44 +1,60 @@
+function handleInput(element, errElement, type) {
+  const events = [ "change", "input", "focusout" ];
+  for (e of events) element.addEventListener(e, function() {
+    errElement.textContent = "";
+  });
+  switch (type) {
+    case "missing":
+      errElement.style.color = "red";
+      errElement.textContent = "Requis";
+      break;
+    case "invalid":
+      errElement.style.color = "orange";
+      errElement.textContent = "Invalide";
+      break;
+  }
+}
+
 function checkForm(event) {
 
   // Nom
   var nom = document.getElementById("name");
+  var err = document.getElementById("err-name");
 
   if (nom.validity.valueMissing) {
     event.preventDefault();
     nom.focus();
     nom.placeholder = "Votre nom";
-    var err = document.getElementById("err-name")
-    nom.addEventListener(["change", "", function () {
-      err.textContent = "";
-    });
-    err.style.color = "red";
-    err.textContent = "Requis";
-    return
+    handleInput(nom, err, "missing");
+    return;
   }
 
   var regex = new RegExp("[A-Za-z-]+");
 
   if (!regex.test(nom.value)) {
     event.preventDefault();
-    alert("Nom invalide !");
     nom.focus();
-    return
+    var err = document.getElementById("err-name");
+    handleInput(nom, err, "invalid");
+    return;
   }
 
   // Prénom
   var prenom = document.getElementById("firstname");
+  var err = document.getElementById("err-firstname");
+
   if (prenom.validity.valueMissing) {
     event.preventDefault();
-    alert("Entrez votre prénom svp !");
     prenom.focus();
     prenom.placeholder = "Votre prénom"
+    handleInput(prenom, err, "missing");
     return
   }
 
   if (!regex.test(prenom.value)) {
     event.preventDefault();
-    alert("Prénom invalide !");
     prenom.focus();
+    handleInput(prenom, err, "invalid");
     return
   }
 
@@ -51,29 +67,32 @@ function checkForm(event) {
 
   // Date de naissance
   var birth = document.getElementById("birthdate");
+  var err = document.getElementById("err-birthdate");
+
   if (birth.validity.valueMissing) {
     event.preventDefault();
-    alert("Entrez votre date de naissance svp !");
     birth.focus()
+    handleInput(birth, err, "missing");
     return
   }
 
   // Code postal
   var regex_zip  = new RegExp("[0-9]{5}");
   var zipcode = document.getElementById("zipcode");
+  var err = document.getElementById("err-zipcode");
 
   if (zipcode.validity.valueMissing) {
     event.preventDefault();
-    alert("Entrez votre code postal svp !")
     zipcode.focus();
     zipcode.placeholder = "Votre code postal";
+    handleInput(zipcode, err, "missing");
     return
   }
 
   if (!regex_zip.test(zipcode.value)) {
     event.preventDefault();
-    alert("Entrez le code postal sur 5 chiffres svp !");
     zipcode.focus();
+    handleInput(zipcode, err, "invalid");
     return
   }
 
@@ -81,37 +100,42 @@ function checkForm(event) {
   // Pour info : https://www.ex-parrot.com/~pdw/Mail-RFC822-Address.html
   var regex_email = new RegExp("^[A-Za-z0-9-_.]+@[a-zA-Z0-9-_.]+\.[a-zA-Z]{2,3}$");
   var email = document.getElementById("email");
+  var err = document.getElementById("err-email");
 
   if (email.validity.valueMissing) {
     event.preventDefault();
-    alert("Entrez votre adresse e-mail svp !");
     email.focus();
+    handleInput(email, err, "missing");
     return
   }
 
   if (!regex_email.test(email.value)) {
     event.preventDefault();
-    alert("Adresse e-mail invalide !");
     email.focus();
+    handleInput(email, err, "invalid");
     return
   }
 
   // Sujet
-  var sujet = document.getElementById("subject");
-  if (sujet.validity.valueMissing) {
+  var subject = document.getElementById("subject");
+  var err = document.getElementById("err-subject");
+
+  if (subject.validity.valueMissing) {
     event.preventDefault();
-    alert("Sélectionnez un sujet svp !");
-    sujet.focus();
+    subject.focus();
+    handleInput(subject, err, "missing");
     return
   }
 
   // Question
   var question = document.getElementById("question");
+  var err = document.getElementById("err-question");
+
   if (question.validity.valueMissing) {
     event.preventDefault();
-    alert("Entrez votre question svp !");
     question.focus();
     question.placeholder = "Votre question"
+    handleInput(question, err, "missing")
     return
   }
 
