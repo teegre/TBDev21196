@@ -1,6 +1,6 @@
 function handleInput(element, errElement, type) {
-  const events = [ "change", "input", "focusout" ];
-  for (e of events) element.addEventListener(e, function() {
+  const events = [ "change", "input"];
+  for (const e of events) element.addEventListener(e, function() {
     errElement.textContent = "";
   });
   switch (type) {
