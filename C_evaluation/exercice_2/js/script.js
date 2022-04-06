@@ -14,11 +14,11 @@ function tableMultiplication(n) {
 
     rows.appendChild(row);
 
-    f1.innerHTML = n;
-    x.innerHTML = 'x';
-    f2.innerHTML = i;
-    eq.innerHTML = '=';
-    p.innerHTML = (i*n);
+    f1.textContent = n;
+    x.textContent = 'x';
+    f2.textContent = i;
+    eq.textContent = '=';
+    p.textContent = (i*n);
 
     row.appendChild(f1);
     row.appendChild(x);
