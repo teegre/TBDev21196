@@ -11,9 +11,69 @@ declare -a grid
 ord() {
   # A=1, B=2 ... Z=26
   local d c=$1
-  printf -v d "%d" "'$c'"
+  printf -v d "%d" "'$c"
   ((d < 65 || d > 90)) && return
   echo $((d-64))
+}
+
+sum_blocks() {
+  local blocks i sum
+  blocks=$1
+  sum=0
+  for ((i=0;i<${#blocks};i++)); do
+    ((sum+=$(ord "${blocks:i:1}")))
+  done
+  echo $((sum))
+}
+
+get_blocks() {
+  local blocks len c
+  blocks=$1
+  len="${#blocks}"
+  for ((c=0;c<len;c++)); do
+    ord "${blocks:$c:1}"
+  done
+}
+
+
+solve_rows() {
+  local row col len blocks block_len sum block r i
+  ((len=row_count))
+  for ((row=0;row<len;row++)); do
+    blocks="${rows[$row]}"
+    block_len="${#blocks}"
+    sum="$(sum_blocks "$blocks")"
+    ((r=len+1-block_len-sum))
+    echo -n "$row: r=$r ; "
+    while read -r block; do
+      echo -n "$block → $((block-r)) ; "
+      ((block-r == 0)) && {
+        ((col=block-1))
+        mark_cell $((row)) $((col))
+      }
+    done < <(get_blocks "$blocks")
+    echo
+  done
+}
+
+solve_cols() {
+  local row col len blocks block_len sum block r i
+  ((len=col_count))
+  for ((col=0;col<len;col++)); do
+    blocks="${cols[$col]}"
+    block_len="${#blocks}"
+    sum="$(sum_blocks "$blocks")"
+    ((r=len+1-block_len-sum))
+    echo -n "$col: r=$r ; "
+    while read -r block; do
+      echo -n "$block → $((block-r)) ; "
+      ((block-r == 0)) && {
+        ((row=block-1))
+        mark_cell $((row)) $((col))
+      }
+    done < <(get_blocks "$blocks")
+    echo
+  done
 }
 
 mark_cell() {
@@ -55,10 +115,11 @@ show_grid() {
       g="${grid[$i]}"
       echo -n " ${g:j:1} "
     done
-    echo
+    echo "${rows[$i]}"
   done
 }
 
 make_grid
-mark_cell 4 4 x
+solve_rows
+solve_cols
 show_grid
