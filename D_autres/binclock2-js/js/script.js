@@ -51,8 +51,8 @@ function displayDigit(row, bn) {
         r.innerHTML = "<b>"+b+"</b>"
         r.style.backgroundColor = fg;
         r.style.color = bg;
-        gg.textContent = g.toString();
-        gg.style.backgroundColor = fg 
+        gg.innerHTML = "<b>"+g.toString()+"</b>";
+        gg.style.backgroundColor = bg;
         gg.style.color = "whitesmoke";
         break;
     }
