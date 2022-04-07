@@ -2,7 +2,8 @@
 
 rows=( "C" "BA" "CB" "BB" "F" "AE" "F" "A" "B" )
 cols=( "AB" "CA" "AE" "GA" "E" "C" "D" "C" )
-
+# rows=( "B" "AA" "AD" "FB" "GA" "EA" "CC" "CA" "BA" "F" )
+# cols=( "AA" "BA" "FA" "G" "G" "ACA" "G" "AA" "H" "B" )
 ((row_count=${#rows[@]}))
 ((col_count=${#cols[@]}))
 
@@ -10,7 +11,7 @@ declare -a grid
 
 ord() {
   # A=1, B=2 ... Z=26
-  local d c=$1
+  local d c=${1^^}
   printf -v d "%d" "'$c"
   ((d < 65 || d > 90)) && return
   echo $((d-64))
