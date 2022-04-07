@@ -86,6 +86,7 @@ Si m = 60 Alors
     h = 0
   Finsi
   m ← 0
+Sinon s ← s + 1
 Finsi
 Ecrire "Dans une seconde, il sera " & h & " heure(s), " & m & " minutes et " & s & " seconde(s)"
 Fin
