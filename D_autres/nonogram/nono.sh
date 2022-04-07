@@ -1,13 +1,13 @@
 #! /usr/bin/env bash
 
-rows=( "C" "BA" "CB" "BB" "F" "AE" "F" "A" "B" )
-cols=( "AB" "CA" "AE" "GA" "E" "C" "D" "C" )
+# rows=( "C" "BA" "CB" "BB" "F" "AE" "F" "A" "B" )
+# cols=( "AB" "CA" "AE" "GA" "E" "C" "D" "C" )
 
 # rows=( "B" "AA" "AD" "FB" "GA" "EA" "CC" "CA" "BA" "F" )
 # cols=( "AA" "BA" "FA" "G" "G" "ACA" "G" "AA" "H" "B" )
 
-# rows=( "AA" "A" "AA" )
-# cols=( "AA" "A" "AA" )
+rows=( "AA" "A" "AA" )
+cols=( "AA" "A" "AA" )
 
 ((row_count=${#rows[@]}))
 ((col_count=${#cols[@]}))
@@ -56,11 +56,10 @@ solve_rows() {
     sum="$(sum_blocks "$yblocks")"
     ((r=col_count-sum+yblocklen-1))
     while read -r block; do
-      echo "block: $block r: $r"
       ((block > r)) && {
         ((col=col_count-block))
-        echo "($row,$col) xblocks: $xblocks | block: $block | r: $r"
-          ((len=sum+xblocklen-1 == row_count ? block : sum+xblocklen-1))
+        echo "($row,$col) yblocks: $yblocks | block: $block | r: $r | len: $len"
+        ((len=sum+xblocklen-1 == row_count ? block : sum+xblocklen-1))
         for ((x=col;x<sum;x++)); do
           [[ $(read_cell $((row)) $((x))) == "#" ]] && continue
           mark_cell $((row)) $((x))
@@ -83,8 +82,8 @@ solve_cols() {
     while read -r block; do
       ((block > r)) && {
         ((row=row_count-block-xblocklen))
-        echo "($row,$col) xblocks: $xblocks | block: $block | r: $r"
         ((len=sum+xblocklen-1 == row_count ? block : sum+xblocklen-1))
+        echo "($row,$col) xblocks: $xblocks | block: $block | r: $r | len: $len"
         for ((y=row;y<len;y++)); do
           [[ $(read_cell $((y)) $((col))) == "#" ]] && continue
           mark_cell $((y)) $((col))
@@ -171,6 +170,6 @@ show_grid() {
 }
 
 make_grid
-# solve_rows
+solve_rows
 solve_cols
 show_grid
