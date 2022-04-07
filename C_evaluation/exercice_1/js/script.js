@@ -1,6 +1,6 @@
 function writeTd(id, value) {
   var td = document.getElementById(id);
-  td.innerHTML = value;
+  td.textContent = value;
 }
 
 var ages = { J: [], M: [], V: [] };
