@@ -1,0 +1,37 @@
+do 2bin echo "obase=2; $@" | bc -l
+do 2dec echo "ibase=2; $@" | bc -l
+do 2hex echo "obase=16; $@" | bc -l
+do bh bash -c "help $@" | less -F
+do bt bigtime -dqs --file simple -F1
+do cbc xclip -sel clip < /dev/null
+do c bc -l <<< "obase=10; $@"
+do crt cool-retro-term "$@"
+do ddo dalias do "$@"
+do ded dalias ed "$@"
+do dls dalias ls "$@"
+do dmv dalias mv "$@"
+do drm dalias rm "$@"
+do e nvim "$@"
+do ght pass show work/github-access-token --clip
+do gia git add "$@"
+do gic git commit "$@"
+do gicp clear; git commit --patch "$@"
+do gil git log --color=always | less -Fr
+do gip pass work/github-access-token --clip > /dev/null && git push "$@" && xclip -sel clip /dev/null
+do gis clear; git status "$@"
+do i3c nvim /home/stephane/.config/i3/config
+do i3sc nvim /home/stephane/.config/i3status/config
+do inst sudo apt-get install "$@"
+do kb setxkbmap -layout fr -option caps:ctrl_modifier && xcape -e Caps_Lock=Escape
+do l ls -h --group-directories-first --color=auto "$@"
+do ll ls -ahl --group-directories-first --color=auto "$@"
+do lock i3lock -c 000000
+do md mkdir "$@"
+do n nnn -d
+do nf clear; neofetch
+do py python3 "$@"
+do screenlayout xrandr --output DP-2 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-3 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output HDMI-2 --off
+do sn shutdown now
+do srb reboot
+do ta tmux attach-session "$@"
+do upd sudo apt-get update && sudo apt-get upgrade
