@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
-# rows=( "C" "BA" "CB" "BB" "F" "AE" "F" "A" "B" )
-# cols=( "AB" "CA" "AE" "GA" "E" "C" "D" "C" )
+rows=( "C" "BA" "CB" "BB" "F" "AE" "F" "A" "B" )
+cols=( "AB" "CA" "AE" "GA" "E" "C" "D" "C" )
 
 # rows=( "B" "AA" "AD" "FB" "GA" "EA" "CC" "CA" "BA" "F" )
 # cols=( "AA" "BA" "FA" "G" "G" "ACA" "G" "AA" "H" "B" )
@@ -11,6 +11,10 @@
 
 rows=( "AB" "A" "DA" "EA" "G" "AAAA" "AF" "CD" "DC" "AB" )
 cols=( "AH" "CB" "CB" "CA" "D" "AAAA" "AD" "C" "E" "AAD" )
+
+# rows=( "AH" "I" "HA" "AEB" "BCC" "AH" "I" "BCC" "AH" "CD" )
+# cols=( "AH" "BABA" "DBB" "I" "I" "I" "DBB" "CF" "BG" "FC" )
+
 
 height="${#rows[@]}"
 width="${#cols[@]}"
@@ -48,56 +52,60 @@ get_blocks() {
   done
 }
 
-get_spaces() {
-  local blocks
-
-
-}
-
 solve() {
   # pos:    position
   # dir:    direction : 0=horizontal 1=vertical
   # size:   grid height or width
   # len:    blocks length
   # sum:    sum of blocks
-  # spaces: spaces between blocks (AAF → spaces=2)
+  # spaces: number of spaces between blocks (AAF → spaces=2)
 
-  local pos dir size row col blocks len sum spaces space block
+  local pos dir size row col blocks len sum spaces block
   pos=$1
   dir=${2:-1}
 
   case $dir in
-    0) blocks="${rows[$pos]}"; size="${#rows[@]}"; ((row=pos)); col=0 ;;
-    1) blocks="${cols[$pos]}"; size="${#cols[@]}"; ((col=pos)); row=0 ;;
+    0) blocks="${rows[$pos]}"; size="width"; ((row=pos)); col=0 ;;
+    1) blocks="${cols[$pos]}"; size="height"; ((col=pos)); row=0; local _v=1 ;;
   esac
 
   len="${#blocks}"
   sum="$(sum_blocks "$blocks")"
-  ((spaces=len > 1 ? len - 1 : len == 1 ? 1 : 0))
+  ((spaces=len > 1 ? len - 1 : len == 1 ? 0 : 1))
 
   echo "pos: $pos [$dir] | size: $size | $blocks | sum: $sum | spaces: $spaces"
 
-  ((sum+spaces == size)) && {
-    # space=
+  (( sum+spaces == size && len > 1 )) && {
+    # row/col is solved
     while read -r block; do
       draw_line $((dir)) $((col)) $((row)) $((block))
-      ((spaces > 0)) & {
-        case $dir in
-          0) ((col+=block)) ;;
-          1) ((row+=block)) ;;
-        esac
-        draw_line $((dir)) $((col)) $((row)) $((spaces)) "."
-        case $dir in
-          0) ((col+=spaces)) ;;
-          1) ((row+=spaces)) ;;
-        esac
+      [[ $_v ]] && ((row+=block))
+      [[ $_v ]] || ((col+=block))
+      ((spaces > 0)) && {
+        draw_line $((dir)) $((col)) $((row)) 1 " "
+        [[ $_v ]] && ((row++))
+        [[ $_v ]] || ((col++))
         ((spaces--))
-      } || case $dir in
-             0) ((col+=block)) ;;
-             1) ((row+=block)) ;;
-           esac
+      }
     done < <(get_blocks "$blocks")
+    return 0
   }
+
+  local n fill
+
+  [[ $_v ]] && { ((n=width-sum+spaces));  ((row+=n)); }
+  [[ $_v ]] || { ((n=height-sum+spaces)); ((col+=n)); }
+
+  while read -r block; do
+    (( block > n )) &&  {
+      local fill
+      ((fill=block-n))
+      draw_line $((dir)) $((col)) $((row)) $((fill))
+    }
+  done < <(get_blocks "$blocks")
+
+  
+
 }
 
 mark_cell() {
@@ -115,12 +123,27 @@ mark_cell() {
 }
 
 read_cell() {
-  local row col x y
-  row=$1
-  col=$2
+  local col row x y
+  col=$1
+  row=$2
   y="${grid[$row]}"
   x="${y:$col:1}"
   echo "$x"
+}
+
+is_space() {
+  [[ $(read_cell "$1" "$2") =~ [[:space:]] ]] && return 0
+  return 1
+}
+
+is_marked() {
+  [[ $(read_cell "$1" "$2") =~ \# ]] && return 0
+  return 1
+}
+
+is_empty() {
+  [[ $(read_cell "$1" "$2") =~ \. ]] && return 0
+  return 1
 }
 
 draw_line() {
@@ -135,7 +158,7 @@ draw_line() {
     mark_cell $((col)) $((row)) "$mark"
     case $dir in
       0) ((col++)) ;;
-      1) ((row++))
+      1) ((row++)) ;;
     esac
     ((len--))
   done
@@ -144,7 +167,7 @@ draw_line() {
 make_grid() {
   for ((i=0;i<height;i++)); do
     for ((j=0;j<width;j++)); do
-      row+=" "
+      local row+="."
     done
     grid+=( "$row" )
     unset row
@@ -195,7 +218,6 @@ show_grid() {
 }
 
 make_grid
-# solve_rows
-# solve_cols
-solve 0 1
+for ((c=0;c<width;c++ )); do solve $((c)) 1; done
+for ((r=0;r<height;r++ )); do solve $((r)) 0; done
 show_grid
